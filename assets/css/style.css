@@ -48,7 +48,12 @@ a:hover { color: #6E1F3E; }
 
 section[id] { scroll-margin-top: 84px; }
 
-.container { max-width: 1200px; margin: 0 auto; padding-inline: 24px; }
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+}
 
 .section { padding-block: 96px; }
 
@@ -121,9 +126,19 @@ section[id] { scroll-margin-top: 84px; }
 
 /* ---------- الهيدر ---------- */
 
+/* يغطي منطقة النوتش فوق الهيدر الثابت */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  z-index: 51;
+  background: var(--ground);
+}
+
 .site-header {
   position: sticky;
-  top: 0;
+  top: env(safe-area-inset-top, 0px);
   z-index: 50;
   background: rgba(255, 247, 248, 0.92);
   backdrop-filter: saturate(1.4) blur(10px);
@@ -397,7 +412,7 @@ section[id] { scroll-margin-top: 84px; }
 .filter:hover { border-color: #D9A3B5; }
 .filter[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #FFFFFF; }
 
-.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(250px, 100%), 1fr)); gap: 28px 22px; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(205px, 100%), 1fr)); gap: 28px 22px; }
 .shot { margin: 0; display: flex; flex-direction: column; gap: 12px; animation: fadeIn 0.35s ease; }
 .shot[hidden] { display: none; }
 .shot-img { border-radius: 24px; overflow: hidden; aspect-ratio: 4 / 5; }
@@ -473,8 +488,8 @@ section[id] { scroll-margin-top: 84px; }
 /* زر واتساب العائم */
 .wa-float {
   position: fixed;
-  bottom: 18px;
-  left: 18px;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px));
+  left: calc(18px + env(safe-area-inset-left, 0px));
   z-index: 60;
   width: 58px;
   height: 58px;
@@ -496,7 +511,10 @@ section[id] { scroll-margin-top: 84px; }
 
 @media (max-width: 600px) {
   .section { padding-block: 64px; }
-  .container { padding-inline: 18px; }
+  .container {
+    padding-left: max(18px, env(safe-area-inset-left, 0px));
+    padding-right: max(18px, env(safe-area-inset-right, 0px));
+  }
   .header-inner { padding-block: 10px; }
   .brand-mark { width: 40px; height: 40px; }
   .brand-name { font-size: 21px; }

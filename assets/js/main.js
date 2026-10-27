@@ -124,8 +124,20 @@ const CONFIG = {
         'اللون المفضل: ' + color
       ].filter(Boolean).join('\n');
 
-      window.open(waLink(msg), '_blank', 'noopener');
-      note.textContent = 'تم فتح واتساب، أرسلي الرسالة ونتواصل معك قريب.';
+      const link = waLink(msg);
+      const win = window.open(link, '_blank', 'noopener');
+      note.textContent = '';
+      if (win === null) {
+        // بعض المتصفحات تمنع فتح نافذة جديدة: نعرض رابط مباشر بدلها
+        const a = document.createElement('a');
+        a.href = link;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = 'اضغطي هنا لفتح واتساب وإرسال الطلب';
+        note.appendChild(a);
+      } else {
+        note.textContent = 'جهّزنا رسالتك في واتساب، اضغطي إرسال ونتواصل معك قريب.';
+      }
     });
   }
 })();
