@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>لمسة باستيل | تزيين وتجديد المطابخ بالاستكرات</title>
 <meta name="description" content="لمسة باستيل — فريق متخصص في ديكور وتجديد المطابخ. نلبّس الدواليب والسطح والجدران باستكرات عالية الجودة بألوان الباستيل، بدون هدم ولا تكسير.">
-<meta name="theme-color" content="#FFF7F8">
+<meta name="theme-color" content="#2B1521">
 <meta property="og:type" content="website">
 <meta property="og:title" content="لمسة باستيل | تزيين وتجديد المطابخ">
 <meta property="og:description" content="مطبخك القديم… بلمسة جديدة تفرّح قلبك. تجديد المطابخ بالاستكرات بدون هدم ولا تكسير.">
@@ -40,6 +40,9 @@
     <symbol id="i-team" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 20c0-3.3 2.5-6 5.5-6s5.5 2.7 5.5 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14.2c2.7.3 4.5 2.6 4.5 5.8"/></symbol>
     <symbol id="i-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="3.8"/><circle cx="17" cy="7" r="0.8"/></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M10 17h10"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M6 6l12 12"/><path d="M18 6L6 18"/></symbol>
+    <symbol id="i-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5"/><path d="M6 11l6-6 6 6"/></symbol>
   </defs>
 </svg>
 
@@ -59,47 +62,74 @@
       <a href="#why">مميزاتنا</a>
       <a href="#gallery">معرض الأفكار</a>
       <a href="#how">كيف نشتغل</a>
+      <a href="#contact">تواصلي معنا</a>
     </nav>
-    <a class="btn btn-primary btn-sm header-cta" href="#contact" data-wa aria-label="اطلبي معاينة عبر واتساب">
-      <svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg>
-      <span class="header-cta-text">اطلبي معاينة</span>
-    </a>
+    <div class="header-actions">
+      <a class="btn btn-blush btn-sm header-cta" href="#contact" data-wa>
+        <svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg>
+        اطلبي معاينة
+      </a>
+      <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="القائمة">
+        <svg class="i-open" width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="i-close" width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
   </div>
 </header>
+
+<div class="mobile-menu" id="mobile-menu" hidden>
+  <nav aria-label="قائمة الجوال">
+    <a href="#before-after">قبل وبعد<svg width="20" height="20" aria-hidden="true"><use href="#i-back"/></svg></a>
+    <a href="#services">خدماتنا<svg width="20" height="20" aria-hidden="true"><use href="#i-back"/></svg></a>
+    <a href="#why">مميزاتنا<svg width="20" height="20" aria-hidden="true"><use href="#i-back"/></svg></a>
+    <a href="#gallery">معرض الأفكار<svg width="20" height="20" aria-hidden="true"><use href="#i-back"/></svg></a>
+    <a href="#how">كيف نشتغل<svg width="20" height="20" aria-hidden="true"><use href="#i-back"/></svg></a>
+    <a href="#contact">تواصلي معنا<svg width="20" height="20" aria-hidden="true"><use href="#i-back"/></svg></a>
+  </nav>
+  <a class="btn btn-blush" href="#contact" data-wa><svg width="20" height="20" aria-hidden="true"><use href="#i-chat"/></svg>اطلبي معاينة عبر واتساب</a>
+  <div class="mobile-menu-foot"><span>واتساب: <span dir="ltr">055 811 8167</span></span></div>
+</div>
 
 <main id="top">
 
 <!-- ============ الواجهة ============ -->
-<section class="hero">
+<section class="hero on-night" id="hero">
   <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="pill"><svg width="16" height="16" aria-hidden="true"><use href="#i-sparkle"/></svg>تزيين وتجديد المطابخ بالاستكرات</span>
-      <h1>مطبخك القديم… <span class="accent">بلمسة جديدة</span> تفرّح قلبك</h1>
-      <p class="hero-sub">فريق متخصص في ديكور وتجديد المطابخ. نلبّس الدواليب والسطح والجدران باستكرات عالية الجودة، وننسّق الستائر والإكسسوارات بألوان الباستيل اللي تحبينها، والنتيجة مطبخ جديد بدون هدم ولا تكسير.</p>
-      <div class="btn-row">
-        <a class="btn btn-primary" href="#contact" data-wa><svg width="20" height="20" aria-hidden="true"><use href="#i-chat"/></svg>اطلبي معاينة عبر واتساب</a>
-        <a class="btn btn-ghost" href="#before-after">شوفي قبل وبعد<svg width="18" height="18" aria-hidden="true"><use href="#i-back"/></svg></a>
-      </div>
-      <ul class="ticks">
-        <li><span class="tick pink"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>بدون هدم ولا تكسير</li>
-        <li><span class="tick sky"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>بدون غبار ولا فوضى</li>
-        <li><span class="tick lav"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>تصميم على ذوقك</li>
-      </ul>
+    <div class="hero-head">
+      <span class="hero-pill"><svg width="16" height="16" aria-hidden="true"><use href="#i-sparkle"/></svg>تزيين وتجديد المطابخ بالاستكرات</span>
+      <h1><span>مطبخك القديم…</span><span class="accent">بلمسة جديدة</span><span>تفرّح قلبك</span></h1>
     </div>
 
-    <div class="collage-wrap">
-      <div class="collage">
-        <figure class="arch side-a"><img src="assets/img/lavender.jpg" alt="مطبخ بدواليب لافندر وسطح رخام أبيض" width="716" height="963"></figure>
-        <figure class="arch center"><img src="assets/img/pink-island.jpg" alt="مطبخ بدواليب بيضاء وجزيرة وردية وإضاءة معلقة وردية" width="736" height="1307" fetchpriority="high"></figure>
-        <figure class="arch side-b"><img src="assets/img/sky-galley.jpg" alt="مطبخ بدواليب سماوية فاتحة وسطح رخام أبيض" width="736" height="1308"></figure>
+    <div class="hero-visual">
+      <div class="reveal-frame">
+        <figure class="reveal" aria-label="عرض متحرك لنفس المطبخ قبل التزيين وبعده">
+          <img class="r-after" src="assets/img/after.jpg" alt="المطبخ بعد التزيين: دواليب وردية وبيضاء لامعة ورخام وردي وستائر" width="1312" height="502" fetchpriority="high">
+          <img class="r-before" src="assets/img/before.jpg" alt="المطبخ قبل التزيين: دواليب قديمة باهتة وسطح غامق" width="1312" height="501">
+          <span class="r-line" aria-hidden="true"></span>
+          <span class="r-tag before" aria-hidden="true">قبل</span>
+          <span class="r-tag after" aria-hidden="true">بعد لمسة باستيل</span>
+        </figure>
       </div>
-      <div class="swatch-card">
-        <strong>اختاري لونك:</strong>
+      <div class="hero-swatches">
+        <strong>ألوانك المفضلة:</strong>
         <span class="swatch"><i class="s-pink"></i>وردي</span>
         <span class="swatch"><i class="s-sky"></i>سماوي</span>
         <span class="swatch"><i class="s-lav"></i>لافندر</span>
         <span class="swatch"><i class="s-mint"></i>نعناعي</span>
       </div>
+    </div>
+
+    <div class="hero-body">
+      <p class="hero-sub">فريق متخصص في ديكور وتجديد المطابخ. نلبّس الدواليب والسطح والجدران باستكرات عالية الجودة، وننسّق الستائر والإكسسوارات بألوان الباستيل اللي تحبينها.</p>
+      <div class="btn-row">
+        <a class="btn btn-blush" href="#contact" data-wa><svg width="20" height="20" aria-hidden="true"><use href="#i-chat"/></svg>اطلبي معاينة عبر واتساب</a>
+        <a class="btn btn-outline-light" href="#gallery">شوفي الأفكار<svg width="18" height="18" aria-hidden="true"><use href="#i-back"/></svg></a>
+      </div>
+      <ul class="hero-ticks">
+        <li><span class="tick bg-pink"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>بدون هدم ولا تكسير</li>
+        <li><span class="tick bg-sky"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>بدون غبار ولا فوضى</li>
+        <li><span class="tick bg-lavender"><svg width="14" height="14" aria-hidden="true"><use href="#i-check"/></svg></span>تصميم على ذوقك</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -220,13 +250,13 @@
 </section>
 
 <!-- ============ التواصل ============ -->
-<section id="contact" class="section contact">
+<section id="contact" class="section contact on-night">
   <div class="container contact-grid">
     <div class="contact-copy">
       <span class="eyebrow">تواصلي معنا</span>
       <h2 class="h2">جاهزة لمطبخ أحلامك؟</h2>
       <p class="contact-lead">أرسلي لنا صور مطبخك واللون اللي تحبينه، ونرجع لك بتصوّر وعرض سعر.</p>
-      <a class="btn btn-primary" href="#contact" data-wa><svg width="20" height="20" aria-hidden="true"><use href="#i-chat"/></svg>تواصلي معنا على واتساب</a>
+      <a class="btn btn-blush" href="#contact" data-wa><svg width="20" height="20" aria-hidden="true"><use href="#i-chat"/></svg>تواصلي معنا على واتساب</a>
       <ul class="contact-list">
         <li><span class="icon-tile"><svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg></span><span>واتساب: <span data-wa-text dir="ltr">055 811 8167</span></span></li>
         <li><span class="icon-tile"><svg width="18" height="18" aria-hidden="true"><use href="#i-camera"/></svg></span><span>انستقرام وسناب: [@اسم_الحساب]</span></li>
@@ -271,17 +301,55 @@
 
 <!-- ============ الفوتر ============ -->
 <footer class="site-footer">
-  <div class="container footer-inner">
-    <div class="footer-brand">
-      <span class="brand-mark"><svg width="20" height="20" aria-hidden="true"><use href="#i-logo"/></svg></span>
-      <span>لمسة باستيل</span>
+  <div class="container footer-grid">
+    <div class="footer-about">
+      <a class="brand" href="#hero" aria-label="لمسة باستيل — العودة للأعلى">
+        <span class="brand-mark"><svg width="24" height="24" aria-hidden="true"><use href="#i-logo"/></svg></span>
+        <span class="brand-text">
+          <span class="brand-name">لمسة باستيل</span>
+          <span class="brand-latin" dir="ltr">PASTEL TOUCH</span>
+        </span>
+      </a>
+      <p>فريق متخصص في ديكور وتجديد المطابخ بالاستكرات وألوان الباستيل. نجدد مطبخك بدون هدم ولا تكسير.</p>
+      <div class="footer-swatches" aria-hidden="true"><i class="s-pink"></i><i class="s-sky"></i><i class="s-lav"></i><i class="s-mint"></i></div>
     </div>
-    <nav class="footer-nav" aria-label="روابط التذييل">
-      <a href="#services">خدماتنا</a>
-      <a href="#gallery">معرض الأفكار</a>
-      <a href="#contact">تواصلي معنا</a>
+
+    <nav class="footer-col" aria-label="روابط سريعة">
+      <h3>روابط سريعة</h3>
+      <ul>
+        <li><a href="#before-after">قبل وبعد</a></li>
+        <li><a href="#why">مميزاتنا</a></li>
+        <li><a href="#gallery">معرض الأفكار</a></li>
+        <li><a href="#how">كيف نشتغل</a></li>
+      </ul>
     </nav>
-    <span>© <span id="year">٢٠٢٦</span> لمسة باستيل — جميع الحقوق محفوظة</span>
+
+    <div class="footer-col">
+      <h3>خدماتنا</h3>
+      <ul>
+        <li><a href="#services">تغليف الدواليب</a></li>
+        <li><a href="#services">رخام السطح</a></li>
+        <li><a href="#services">الجدران والسيراميك</a></li>
+        <li><a href="#services">الستائر والإكسسوارات</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>تواصلي معنا</h3>
+      <ul>
+        <li><a href="#contact" data-wa><svg width="18" height="18" aria-hidden="true"><use href="#i-chat"/></svg><span dir="ltr">055 811 8167</span></a></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-camera"/></svg><span>[@اسم_الحساب]</span></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-pin"/></svg><span>[المدينة والأحياء]</span></li>
+        <li><svg width="18" height="18" aria-hidden="true"><use href="#i-clock"/></svg><span>[أوقات العمل]</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      <span>© ٢٠٢٦ لمسة باستيل — جميع الحقوق محفوظة</span>
+      <a class="to-top" href="#hero">العودة للأعلى<svg width="16" height="16" aria-hidden="true"><use href="#i-up"/></svg></a>
+    </div>
   </div>
 </footer>
 

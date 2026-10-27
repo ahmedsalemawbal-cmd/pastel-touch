@@ -32,6 +32,43 @@ const CONFIG = {
     });
   }
 
+  /* ---------- قائمة الجوال ---------- */
+  const menuBtn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+
+  function setMenu(open) {
+    menu.hidden = !open;
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'إغلاق القائمة' : 'القائمة');
+    document.body.classList.toggle('menu-open', open);
+  }
+
+  if (menuBtn && menu) {
+    menuBtn.addEventListener('click', function () {
+      setMenu(menuBtn.getAttribute('aria-expanded') !== 'true');
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setMenu(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menu.hidden) { setMenu(false); menuBtn.focus(); }
+    });
+    window.matchMedia('(min-width: 961px)').addEventListener('change', function (mq) {
+      if (mq.matches) setMenu(false);
+    });
+  }
+
+  /* ---------- زر واتساب العائم: يظهر بعد الواجهة ---------- */
+  const waFloat = document.querySelector('.wa-float');
+  const hero = document.getElementById('hero');
+  if (waFloat && hero && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function (entries) {
+      waFloat.classList.toggle('show', !entries[0].isIntersecting);
+    }, { rootMargin: '-40% 0px 0px 0px' }).observe(hero);
+  } else if (waFloat) {
+    waFloat.classList.add('show');
+  }
+
   /* ---------- سلايدر قبل وبعد ---------- */
   const ba = document.getElementById('ba');
   if (ba) {
