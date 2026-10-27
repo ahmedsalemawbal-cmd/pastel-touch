@@ -12,10 +12,13 @@
 ## التعديلات المهمة
 | المطلوب | المكان |
 |---|---|
-| رقم الواتساب | `assets/js/main.js` ← `CONFIG.whatsapp` (مثال: `9665XXXXXXXX`) |
+| رقم الواتساب | `assets/js/main.js` ← `CONFIG.whatsapp` (الحالي: `966558118167`) |
 | النصوص بين الأقواس مثل `[مدة التنفيذ]` و`[المدينة والأحياء]` | `index.html` |
 | اللون الأساسي | `assets/css/style.css` ← `--accent` |
 | الصور | مجلد `assets/img/` (يفضّل استبدالها بصور أعمالكم الفعلية) |
 
 ## التشغيل
 موقع ثابت (HTML + CSS + JS) بدون أي أدوات بناء — افتح `index.html` مباشرة، أو انشره على GitHub Pages.
+
+## رابط الموقع
+https://ahmedsalemawbal-cmd.github.io/pastel-touch/

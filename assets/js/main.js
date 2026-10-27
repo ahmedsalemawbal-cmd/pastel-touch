@@ -5,7 +5,8 @@
 /* عدّل هنا: رقم الواتساب بالصيغة الدولية بدون + أو أصفار في البداية
    مثال: '9665XXXXXXXX'  — اتركه فاضي إلى أن يجهز الرقم */
 const CONFIG = {
-  whatsapp: '',
+  whatsapp: '966558118167',
+  displayNumber: '055 811 8167',
   greeting: 'السلام عليكم، أبغى أجدد مطبخي مع لمسة باستيل'
 };
 
@@ -26,7 +27,7 @@ const CONFIG = {
       a.rel = 'noopener';
     });
     document.querySelectorAll('[data-wa-text]').forEach(function (el) {
-      el.textContent = '+' + CONFIG.whatsapp;
+      el.textContent = CONFIG.displayNumber || ('+' + CONFIG.whatsapp);
       el.setAttribute('dir', 'ltr');
     });
   }
